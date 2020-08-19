@@ -1,0 +1,33 @@
+{
+  "android": {
+    "root": "android",
+    "dependencies": [
+      "com.google.android.material:material:"
+    ]
+  },
+  "ios": {
+    "copy": [
+      {
+        "dest": "{{{projectName}}}/Libraries/RNSnackbar",
+        "source": "ios/*"
+      }
+    ],
+    "pbxproj": {
+      "addHeaderSearchPath": [
+        "\"$(SRCROOT)/{{{projectName}}}/Libraries/RNSnackbar/**\""
+      ],
+      "addProject": [
+        {
+          "group": "Libraries",
+          "path": "RNSnackbar/RNSnackbar.xcodeproj",
+          "staticLibs": [
+            {
+              "name": "libRNSnackbar.a",
+              "target": "RNSnackbar"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

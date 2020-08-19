@@ -1,0 +1,34 @@
+{
+  "android": {
+    "root": "MatrixFilterConstructor/android/app",
+    "dependencies": [
+      "fileTree(dir: libs\", include:",
+      "com.android.support:appcompat-v7:"
+    ]
+  },
+  "ios": {
+    "copy": [
+      {
+        "dest": "{{{projectName}}}/Libraries/MatrixFilterConstructor",
+        "source": "MatrixFilterConstructor/ios/*"
+      }
+    ],
+    "pbxproj": {
+      "addHeaderSearchPath": [
+        "\"$(SRCROOT)/{{{projectName}}}/Libraries/MatrixFilterConstructor/**\""
+      ],
+      "addProject": [
+        {
+          "group": "Libraries",
+          "path": "MatrixFilterConstructor/MatrixFilterConstructor.xcodeproj",
+          "staticLibs": [
+            {
+              "name": "libMatrixFilterConstructor.a",
+              "target": "MatrixFilterConstructor"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "android": {
+    "root": "android",
+    "dependencies": []
+  },
+  "ios": {
+    "copy": [
+      {
+        "dest": "{{{projectName}}}/Libraries/ReactNativeLocalization",
+        "source": "ios/*"
+      }
+    ],
+    "pbxproj": {
+      "addHeaderSearchPath": [
+        "\"$(SRCROOT)/{{{projectName}}}/Libraries/ReactNativeLocalization/**\""
+      ],
+      "addProject": [
+        {
+          "group": "Libraries",
+          "path": "ReactNativeLocalization/ReactNativeLocalization.xcodeproj",
+          "staticLibs": [
+            {
+              "name": "libReactNativeLocalization.a",
+              "target": "ReactNativeLocalization"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
